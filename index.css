@@ -76,12 +76,19 @@ a {
 
 .card > img {
   width: 100%;
+  object-fit: fill;
 }
 
 .restaurant-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
   font-family: "Roboto";
+  gap: 30px;
 }
 .search-container {
   display: flex;
@@ -200,7 +207,7 @@ a {
 .restaurantMenu__menu > ul > li > button {
   /* margin-top: 30px; */
   position: absolute;
-  right: 0;
+  right: 23px;
   height: 2rem;
   width: 10rem;
   border: none;
