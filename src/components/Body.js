@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
+import useOnline from "../hooks/useOnline";
+import offline from "../assets/offline.webp";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -24,6 +26,22 @@ const Body = () => {
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          fontFamily: "Roboto",
+        }}
+      >
+        <h1>Connect to the internet</h1>
+        <p>You're offline. Check your connection</p>
+      </div>
+    );
+  }
   // if (!allRestaurants) return null;
 
   return allRestaurants?.length === 0 ? (
