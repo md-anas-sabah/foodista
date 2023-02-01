@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
   /* background-color: rgb(43, 43, 43); */
   background-color: #252525;

@@ -3,6 +3,8 @@ import { useEffect, useState, useReducer } from "react";
 import { cartReducer } from "../Reducers/cartReducer";
 import Products from "./Products";
 import Cart from "./Cart";
+import ShimmerInstaMart from "./ShimmerInstaMart";
+
 const Instamart = () => {
   const [search, setSearch] = useState("");
 
@@ -24,10 +26,12 @@ const Instamart = () => {
   useEffect(() => {
     getProducts();
   }, []);
-  return (
-    <div className="instamart flex flex-col items-center bg-gray-800">
-      <div className="instamart-input flex justify-center items-end gap-4 h-52 bg-white w-9/12 rounded-b-full p-10">
-        <div className=" instamart-input_container flex items-center bg-white w-9/12 border rounded-lg overflow-hidden">
+  return state === 0 ? (
+    <ShimmerInstaMart />
+  ) : (
+    <div className="flex flex-col items-center bg-gray-800 rounded-xl ">
+      <div className="flex justify-center items-end gap-4 h-52 bg-white w-9/12 rounded-b-full p-10">
+        <div className="flex items-center bg-white w-9/12 border rounded-lg overflow-hidden">
           <input
             type="text"
             placeholder="Search for items.."

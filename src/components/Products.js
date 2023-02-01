@@ -2,11 +2,11 @@ function Products({ state, dispatch }) {
   const { products, cart } = state;
 
   return (
-    <div className="flex flex-wrap m-10 place-content-evenly w-8/12 border rounded-lg overflow-hidden">
+    <div className="flex flex-wrap m-10 place-content-evenly w-8/12 rounded-lg overflow-hidden  shadow-sm shadow-white">
       {products.map((prod) => (
         <div
           key={prod.key}
-          className="flex p-4 flex-col border border-gray-700 w-1/3 gap-10 "
+          className="flex p-4 flex-col border border-gray-700 w-1/3 gap-10  "
         >
           <img
             src={prod.thumbnail}
@@ -20,7 +20,7 @@ function Products({ state, dispatch }) {
           </div>
           {cart.some((p) => p.id === prod.id) ? (
             <button
-              className="p-5   bg-red-600 rounded-md text-white cursor-pointer "
+              className="p-5 bg-red-600 rounded-md text-white cursor-pointer "
               onClick={() => {
                 dispatch({
                   type: "REMOVE_FROM_CART",
