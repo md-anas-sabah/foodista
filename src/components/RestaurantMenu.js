@@ -20,8 +20,8 @@ const RestaurantMenu = () => {
         <p>{`Rating: ` + restaurantMenu?.totalRatingsString}</p>
         <button>Feedback</button>
       </div>
-      <div className="restaurantMenu__menu">
-        <h1>Menu</h1>
+      <div className="restaurantMenu__menu p-10">
+        <h1 className="text-3xl mb-10">Menu</h1>
         {!restaurantMenu?.menu?.items ? (
           <ShimmerRestaurantMenu />
         ) : (

@@ -34,18 +34,26 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+
           <li>Cart</li>
         </ul>
       </div>
-      {isLoggedIn ? (
-        <button className="header-btn" onClick={() => setIsLoggedIn(false)}>
-          Logout
+      <div className="buttons flex gap-12">
+        <button className="">
+          <Link to="/instamart">
+            <p className="button-75">✨ Shop with Foodista ✨</p>{" "}
+          </Link>
         </button>
-      ) : (
-        <button className="header-btn" onClick={() => setIsLoggedIn(true)}>
-          Login
-        </button>
-      )}
+        {isLoggedIn ? (
+          <button className="header-btn" onClick={() => setIsLoggedIn(false)}>
+            Logout
+          </button>
+        ) : (
+          <button className="header-btn" onClick={() => setIsLoggedIn(true)}>
+            Login
+          </button>
+        )}
+      </div>
     </div>
   );
 };
