@@ -1,11 +1,13 @@
-import { restaurantList } from "../Constants";
+// import { restaurantList } from "../Constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../hooks/useOnline";
-import offline from "../assets/offline.webp";
+// import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { MoonIcon } from "@heroicons/react/24/solid";
+// import offline from "../assets/offline.webp";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -51,7 +53,7 @@ const Body = () => {
       <div className="search-container">
         <input
           type="text"
-          className="search-input"
+          className="search-input border rounded-tl-3xl rounded-bl-3xl"
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
@@ -59,7 +61,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="search-btn rounded-tr-3xl rounded-br-3xl border-none text-gray-300"
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
             setFilteredRestaurants(data);
@@ -68,6 +70,12 @@ const Body = () => {
           Search
         </button>
       </div>
+
+      <div className="bg-gray-900 h-24 w-20 flex flex-col rounded-tr-full rounded-br-full top-3/4 cursor-pointer ">
+        {/* <DarkModeIcon className="absolute top-10 text-black " /> */}
+        <MoonIcon className="h-10 bg-gray-900 justify-center absolute top-52 left-4" />
+      </div>
+
       <div className="restaurant-list">
         {filteredRestaurants.length === 0 ? (
           <h1 style={{ textAlign: "center" }}>

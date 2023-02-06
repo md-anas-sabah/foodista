@@ -6,7 +6,7 @@ function Products({ state, dispatch }) {
       {products.map((prod) => (
         <div
           key={prod.key}
-          className="flex p-4 flex-col border border-gray-700 w-1/3 gap-10  "
+          className="flex p-4 flex-col border border-gray-700 w-1/3 gap-4  "
         >
           <img
             src={prod.thumbnail}

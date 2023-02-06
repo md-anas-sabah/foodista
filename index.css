@@ -5,7 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   /* background-color: rgb(43, 43, 43); */
   background-color: #252525;
@@ -101,11 +100,10 @@ a {
   display: flex;
   flex-direction: row;
   height: 5rem;
-  /* width: 30rem; */
   justify-content: center;
 }
 .search-container > input {
-  width: 90rem;
+  width: 80rem;
   padding: 20px;
   font-family: "Roboto";
   font-size: 13px;
@@ -116,7 +114,7 @@ a {
   width: 6rem;
   font-family: "Roboto";
   font-size: 14px;
-  border: 1px solid rgb(248, 248, 248);
+  border: 1px solid grey;
 }
 .shimmer {
   display: flex;
