@@ -9,18 +9,18 @@ import Error from "./components/Error";
 import Contact from "./pages/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import ShimmerInstaMart from "./components/ShimmerInstaMart";
-// import Instamart from "./components/Instamart";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const Instamart = lazy(() => import("./components/Instamart"));
-
 const AppLayout = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       {/* <Body /> */}
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 
