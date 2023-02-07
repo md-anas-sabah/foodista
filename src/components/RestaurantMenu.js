@@ -1,12 +1,19 @@
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../Constants";
 import useResMenu from "../hooks/useResMenu";
+import { addItem } from "../utils/cartSlice";
 import ShimmerRestaurantMenu from "./ShimmerRestaurantMenu";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
   // const restaurantMenu = useRestaurantMenu(id);
   const restaurantMenu = useResMenu(id);
+  const dispatch = useDispatch();
+
+  const handleItem = () => {
+    dispatch(addItem("Grapes"));
+  };
 
   return (
     <div className="restaurantMenu">
@@ -30,7 +37,7 @@ const RestaurantMenu = () => {
               <li key={item.id}>
                 {<img src={IMG_CDN_URL + item.cloudinaryImageId} alt="" />}{" "}
                 <p>{item.name}</p>
-                <button>Add Item</button>
+                <button onClick={() => handleItem()}>Add Item</button>
               </li>
             ))}
           </ul>

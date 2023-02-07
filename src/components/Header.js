@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const loggedInUser = () => {
   return false;
@@ -20,6 +21,8 @@ const Title = () => (
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className="header">
       <Title />
@@ -35,7 +38,12 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
 
-          <li>Cart</li>
+          <li>
+            Cart
+            <span className="absolute top-6 h-3 w-3 text-center">
+              {cartItems.length}
+            </span>
+          </li>
         </ul>
       </div>
       <div className="buttons flex gap-12">
