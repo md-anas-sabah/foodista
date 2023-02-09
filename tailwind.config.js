@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "mart": "#211d59",
+        mart: "#211d59",
+        button: "#FE0458",
       },
       fontFamily: {
         // // Roboto: ['"Roboto Condensed"', ...defaultTheme.fontFamily.sans],
