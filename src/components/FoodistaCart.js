@@ -21,14 +21,16 @@ const FoodistaCart = () => {
       <h1 className="text-3xl font-bold mb-12 m-10">Your cart is empty</h1>
 
       <Link to="/">
-        <button className="bg-button h-12 w-96 font-semibold uppercase rounded-3xl">Go to nearby restaurant</button>
+        <button className="bg-button h-12 w-96 font-semibold uppercase rounded-3xl">
+          Go to nearby restaurant
+        </button>
       </Link>
     </div>
   ) : (
     <div className="flex m-10 gap-10">
       <div className=" flex flex-col gap-10 w-2/3">
         {cartItems.map((item) => {
-          return <ItemCard {...item} />;
+          return <ItemCard {...item} key={item.id} />;
         })}
       </div>
       <div className="flex flex-col flex-1  ">

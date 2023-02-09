@@ -1,7 +1,15 @@
 import { IMG_CDN_URL } from "../Constants";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../utils/cartSlice";
 
 const ItemCard = ({ name, description, cloudinaryImageId, price }) => {
+  const dispatch = useDispatch();
+
+  const handleRemoveItem = () => {
+    dispatch(removeItem());
+  };
+
   return (
     <div className="flex items-center bg-gray-900 shadow rounded-lg gap-3">
       <div className="rounded-lg aspect-video overflow-hidden object-cover  ">
@@ -22,7 +30,10 @@ const ItemCard = ({ name, description, cloudinaryImageId, price }) => {
       </div>
       <div className="h-10 w-28 flex justify-center ml-56 bg-gray-900">
         <button>
-          <XMarkIcon className="h-10 bg-gray-900 " />
+          <XMarkIcon
+            className="h-10 bg-gray-900 "
+            onClick={() => handleRemoveItem()}
+          />
         </button>
       </div>
     </div>
