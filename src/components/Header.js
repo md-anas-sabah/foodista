@@ -22,13 +22,14 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
         <ul>
-          <li>
+          <li className="cursor-pointer">
             <Link to="/">Home</Link>
           </li>
           <li>
@@ -39,10 +40,12 @@ const Header = () => {
           </li>
 
           <li>
-            Cart
-            <span className="absolute top-6 h-3 w-3 text-center">
-              {cartItems.length}
-            </span>
+            <Link to="/carts">
+              Cart
+              <span className="absolute top-6 h-3 w-3 text-center">
+                {cartItems.length}
+              </span>
+            </Link>
           </li>
         </ul>
       </div>

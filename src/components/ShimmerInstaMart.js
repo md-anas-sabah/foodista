@@ -1,7 +1,7 @@
 const ShimmerInstaMart = () => {
-  return  (
-    <div className="flex flex-col items-center ">
-      <div className="flex justify-center items-end gap-4 h-52 bg-gray-400 w-9/12 rounded-b-full p-10">
+  return (
+    <div className="flex flex-col items-center  ">
+      <div className="flex justify-center items-end gap-4 h-52 bg-gray-400 w-9/12 rounded-b-full p-10 ">
         <div className="flex items-center bg-gray-400 w-9/12 border rounded-lg overflow-hidden"></div>
       </div>
       <div className="flex flex-row w-full mt-10 bg-gray-400 ">

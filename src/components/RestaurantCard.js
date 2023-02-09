@@ -7,11 +7,19 @@ const RestaurantCard = ({
   lastMileTravelString,
 }) => {
   return (
-    <div className="card flex-col space-y-2 border-gray-50 rounded-xl shadow">
-      <img src={IMG_CDN_URL + cloudinaryImageId} />
-      <h2 className="text-lg font-bold">{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h4>{lastMileTravelString} minutes</h4>
+    <div className="flex flex-col gap-2">
+      <div className="rounded-lg aspect-video overflow-hidden">
+        <img
+          src={IMG_CDN_URL + cloudinaryImageId}
+          className="hover:scale-150"
+        />
+      </div>
+
+      <div className="flex flex-col gap-1">
+        <h2 className="text-lg font-bold">{name}</h2>
+        <h3 className="truncate">{cuisines.join(", ")}</h3>
+        <h4 className="">{lastMileTravelString} minutes</h4>
+      </div>
     </div>
   );
 };

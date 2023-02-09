@@ -76,22 +76,24 @@ const Body = () => {
         <MoonIcon className="h-10 bg-gray-900 justify-center absolute top-52 left-4" />
       </div>
 
-      <div className="restaurant-list">
+      <div className="max-w-7xl mx-auto">
         {filteredRestaurants.length === 0 ? (
           <h1 style={{ textAlign: "center" }}>
             No Restaurant match your Filter!!
           </h1>
         ) : (
-          filteredRestaurants.map((restaurant) => {
-            return (
-              <Link
-                to={"/restaurants/" + restaurant.data.id}
-                key={restaurant.data.id}
-              >
-                <RestaurantCard {...restaurant.data} />
-              </Link>
-            );
-          })
+          <div className="grid grid-cols-4 gap-6">
+            {filteredRestaurants.map((restaurant) => {
+              return (
+                <Link
+                  to={"/restaurants/" + restaurant.data.id}
+                  key={restaurant.data.id}
+                >
+                  <RestaurantCard {...restaurant.data} />
+                </Link>
+              );
+            })}
+          </div>
         )}
       </div>
     </>

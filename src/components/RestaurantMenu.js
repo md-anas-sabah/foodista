@@ -4,6 +4,7 @@ import { IMG_CDN_URL } from "../Constants";
 import useResMenu from "../hooks/useResMenu";
 import { addItem } from "../utils/cartSlice";
 import ShimmerRestaurantMenu from "./ShimmerRestaurantMenu";
+import { PlusIcon } from "@heroicons/react/24/outline";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -11,8 +12,8 @@ const RestaurantMenu = () => {
   const restaurantMenu = useResMenu(id);
   const dispatch = useDispatch();
 
-  const handleItem = () => {
-    dispatch(addItem("Grapes"));
+  const handleItem = (item) => {
+    dispatch(addItem(item));
   };
 
   return (
@@ -37,7 +38,9 @@ const RestaurantMenu = () => {
               <li key={item.id}>
                 {<img src={IMG_CDN_URL + item.cloudinaryImageId} alt="" />}{" "}
                 <p>{item.name}</p>
-                <button onClick={() => handleItem()}>Add Item</button>
+                <button onClick={() => handleItem(item)}>
+                  Add
+                </button>
               </li>
             ))}
           </ul>
