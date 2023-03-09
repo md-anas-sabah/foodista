@@ -4,7 +4,6 @@ import { IMG_CDN_URL } from "../Constants";
 import useResMenu from "../hooks/useResMenu";
 import { addItem } from "../utils/cartSlice";
 import ShimmerRestaurantMenu from "./ShimmerRestaurantMenu";
-import { PlusIcon } from "@heroicons/react/24/outline";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -36,7 +35,7 @@ const RestaurantMenu = () => {
           <ul>
             {Object.values(restaurantMenu?.menu?.items).map((item) => (
               <li key={item.id}>
-                {<img src={IMG_CDN_URL + item.cloudinaryImageId} alt="" />}{" "}
+                {<img src={IMG_CDN_URL + item.cloudinaryImageId} alt="" />}
                 <p>{item.name}</p>
                 <button onClick={() => handleItem(item)}>
                   Add

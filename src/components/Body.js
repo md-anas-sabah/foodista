@@ -1,13 +1,12 @@
 // import { restaurantList } from "../Constants";
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../hooks/useOnline";
 // import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { MoonIcon } from "@heroicons/react/24/solid";
-// import offline from "../assets/offline.webp";
+// import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -71,12 +70,11 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="bg-gray-900 h-24 w-20 flex flex-col rounded-tr-full rounded-br-full top-3/4 cursor-pointer ">
-        {/* <DarkModeIcon className="absolute top-10 text-black " /> */}
+      {/* <div className="bg-gray-900 h-24 w-20 flex flex-col rounded-tr-full rounded-br-full top-3/4 cursor-pointer">
         <MoonIcon className="h-10 bg-gray-900 justify-center absolute top-52 left-4" />
-      </div>
+      </div> */}
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto mt-4">
         {filteredRestaurants.length === 0 ? (
           <h1 style={{ textAlign: "center" }}>
             No Restaurant match your Filter!!
